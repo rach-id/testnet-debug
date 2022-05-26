@@ -1,0 +1,90 @@
+version: '3'
+
+services:
+  core0:
+    container_name: core0
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    ports:
+      - "9090:9090"
+      - "26657:26657"
+    command: [
+      "start",
+      "--moniker", "core0",
+      "--rpc.laddr", "tcp://0.0.0.0:26657"
+    ]
+    volumes:
+      - ${PWD}/celestia-app/core0/config/priv_validator_key.json:/opt/config/priv_validator_key.json:ro
+      - ${PWD}/celestia-app/core0/config/node_key.json:/opt/config/node_key.json:ro
+      - ${PWD}/celestia-app/core0/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/celestia-app/core0/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+  core1:
+    container_name: core1
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core1
+      - CELESTIA_HOME=/opt
+      - AMOUNT=5000000000utia
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_node_and_create_validator.sh"
+    ]
+    volumes:
+      - ${PWD}/celestia-app/core1/config/priv_validator_key.json:/opt/config/priv_validator_key.json:ro
+      - ${PWD}/celestia-app/core1/config/node_key.json:/opt/config/node_key.json:ro
+      - ${PWD}/celestia-app/core1/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_node_and_create_validator.sh:/opt/start_node_and_create_validator.sh:ro
+      - ${PWD}/celestia-app/core1/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+      - ${PWD}/tmp:/opt/tmp
+
+  core2:
+    container_name: core2
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core2
+      - CELESTIA_HOME=/opt
+      - AMOUNT=5000000000utia
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_node_and_create_validator.sh"
+    ]
+    volumes:
+      - ${PWD}/celestia-app/core2/config/priv_validator_key.json:/opt/config/priv_validator_key.json:ro
+      - ${PWD}/celestia-app/core2/config/node_key.json:/opt/config/node_key.json:ro
+      - ${PWD}/celestia-app/core2/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_node_and_create_validator.sh:/opt/start_node_and_create_validator.sh:ro
+      - ${PWD}/celestia-app/core2/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+  core3:
+    container_name: core3
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core3
+      - CELESTIA_HOME=/opt
+      - AMOUNT=5000000000utia
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_node_and_create_validator.sh"
+    ]
+    volumes:
+      - ${PWD}/celestia-app/core3/config/priv_validator_key.json:/opt/config/priv_validator_key.json:ro
+      - ${PWD}/celestia-app/core3/config/node_key.json:/opt/config/node_key.json:ro
+      - ${PWD}/celestia-app/core3/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_node_and_create_validator.sh:/opt/start_node_and_create_validator.sh:ro
+      - ${PWD}/celestia-app/core3/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
