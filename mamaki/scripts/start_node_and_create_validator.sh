@@ -4,9 +4,9 @@
 # keeps running it validating blocks.
 
 # check if environment variables are set
-if [[ -z "${CELESTIA_HOME}" || -z "${MONIKER}" || -z "${ETH_ADDRESS}" || -z "${AMOUNT}" ]]
+if [[ -z "${CELESTIA_HOME}" || -z "${MONIKER}" || -z "${AMOUNT}" ]]
 then
-  echo "Environment not setup correctly. Please set: CELESTIA_HOME, MONIKER, ETH_ADDRESS, AMOUNT variables"
+  echo "Environment not setup correctly. Please set: CELESTIA_HOME, MONIKER, AMOUNT variables"
   exit -1
 fi
 
@@ -24,7 +24,13 @@ EOF
 fi
 
 # install needed dependencies
-apk add curl
+apk add curl iproute2
+
+# introduce latency
+if [[ -n  "${LATENCY}" ]]
+then
+  tc qdisc add dev eth0 root netem delay ${LATENCY}
+fi
 
 {
   # wait for the node to get up and running

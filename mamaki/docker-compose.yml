@@ -28,12 +28,15 @@ services:
       - MONIKER=core1
       - CELESTIA_HOME=/opt
       - AMOUNT=5000000000utia
+      - LATENCY=200ms
     entrypoint: [
       "/bin/bash"
     ]
     command: [
       "/opt/start_node_and_create_validator.sh"
     ]
+    cap_add:
+      - NET_ADMIN
     volumes:
       - ${PWD}/celestia-app/core1/config/priv_validator_key.json:/opt/config/priv_validator_key.json:ro
       - ${PWD}/celestia-app/core1/config/node_key.json:/opt/config/node_key.json:ro
@@ -52,12 +55,15 @@ services:
       - MONIKER=core2
       - CELESTIA_HOME=/opt
       - AMOUNT=5000000000utia
+      - LATENCY=400ms
     entrypoint: [
       "/bin/bash"
     ]
     command: [
       "/opt/start_node_and_create_validator.sh"
     ]
+    cap_add:
+      - NET_ADMIN
     volumes:
       - ${PWD}/celestia-app/core2/config/priv_validator_key.json:/opt/config/priv_validator_key.json:ro
       - ${PWD}/celestia-app/core2/config/node_key.json:/opt/config/node_key.json:ro
@@ -75,12 +81,15 @@ services:
       - MONIKER=core3
       - CELESTIA_HOME=/opt
       - AMOUNT=5000000000utia
+      - LATENCY=600ms
     entrypoint: [
       "/bin/bash"
     ]
     command: [
       "/opt/start_node_and_create_validator.sh"
     ]
+    cap_add:
+      - NET_ADMIN
     volumes:
       - ${PWD}/celestia-app/core3/config/priv_validator_key.json:/opt/config/priv_validator_key.json:ro
       - ${PWD}/celestia-app/core3/config/node_key.json:/opt/config/node_key.json:ro
