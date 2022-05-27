@@ -97,3 +97,600 @@ services:
       - ${PWD}/scripts/start_node_and_create_validator.sh:/opt/start_node_and_create_validator.sh:ro
       - ${PWD}/celestia-app/core3/config.toml:/opt/config/config.toml:ro
       - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+  core4:
+    container_name: core4
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core4
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core5:
+    container_name: core5
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core5
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core6:
+    container_name: core6
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core6
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core7:
+    container_name: core7
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core7
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core8:
+    container_name: core8
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core8
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core9:
+    container_name: core9
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core9
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core10:
+    container_name: core10
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core10
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core11:
+    container_name: core11
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core11
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core12:
+    container_name: core12
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core12
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core13:
+    container_name: core13
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core13
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core14:
+    container_name: core14
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core14
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core15:
+    container_name: core15
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core15
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core16:
+    container_name: core16
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core16
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core17:
+    container_name: core17
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core17
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core18:
+    container_name: core18
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core18
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core19:
+    container_name: core19
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core19
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core20:
+    container_name: core20
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core20
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core21:
+    container_name: core21
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core21
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core22:
+    container_name: core22
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core22
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core23:
+    container_name: core23
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core23
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core24:
+    container_name: core24
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core24
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core25:
+    container_name: core25
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core25
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
+
+
+  core26:
+    container_name: core26
+    image: ghcr.io/celestiaorg/celestia-app:latest
+    depends_on:
+      - core0
+    environment:
+      - MONIKER=core26
+      - AMOUNT=5000000000utia
+      - LATENCY=100ms
+      - TIMEOUT_COMMIT=10s
+      - TIMEOUT_PROPOSE=2s
+    entrypoint: [
+      "/bin/bash"
+    ]
+    command: [
+      "/opt/start_another_validator.sh"
+    ]
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ${PWD}/celestia-app/coreInfinity/keyring-test:/opt/keyring-test:ro
+      - ${PWD}/scripts/start_another_validator.sh:/opt/start_another_validator.sh:ro
+      - ${PWD}/celestia-app/coreInfinity/config.toml:/opt/config/config.toml:ro
+      - ${PWD}/celestia-app/genesis.json:/opt/config/genesis.json:ro
