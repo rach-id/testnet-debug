@@ -1,0 +1,2 @@
+If you want to reduce the number of validators, just delete their lines from `docker-compose.yml`.
+Also, if you want more validators, just add container lines to `docker-compose.yml` up to 26.

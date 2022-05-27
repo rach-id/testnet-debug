@@ -7,7 +7,7 @@
 if [[ -z "${CELESTIA_HOME}" || -z "${MONIKER}" || -z "${AMOUNT}" ]]
 then
   echo "Environment not setup correctly. Please set: CELESTIA_HOME, MONIKER, AMOUNT variables"
-  exit -1
+  exit 1
 fi
 
 # create necessary structure if doens't exist
@@ -65,5 +65,5 @@ fi
 celestia-appd start \
 --home="${CELESTIA_HOME}" \
 --moniker="${MONIKER}" \
---p2p.persistent-peers=e33d7e92d327cc775354c19e11b0208edba4f68f@core0:26656 \
+--p2p.persistent-peers=81c92b8dde62536849897be8535a8b2822d02040@core0:26656 \
 --rpc.laddr=tcp://0.0.0.0:26657
